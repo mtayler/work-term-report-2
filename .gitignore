@@ -12,4 +12,4 @@
 *.glg
 *.gls
 *.lof
-*.synctex.gz
+*.synctex*.gz
