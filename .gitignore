@@ -1,0 +1,15 @@
+*.pdf
+*.log
+*.fls
+*.fdb_latexmk
+*.acn
+*.acr
+*.alg
+*.toc
+*.xdy
+*.aux
+*.glo
+*.glg
+*.gls
+*.lof
+*.synctex.gz

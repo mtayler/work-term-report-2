@@ -1,0 +1,89 @@
+\documentclass{article}
+
+\bibliographystyle{ieeetr}
+
+% Configuration
+
+% Project management
+% Typesetting packages
+	% used in creating the supervisor/office box
+		\usepackage{xparse}
+	% graphics
+		\usepackage{graphicx}
+	% double spacing
+		\usepackage{setspace}
+	% captions
+		\usepackage[font=doublespacing]{caption}
+	% Include list of figures/tables in toc
+		\usepackage[nottoc]{tocbibind}
+	% For glossary of terms and acronyms
+		\usepackage[xindy,toc,acronym]{glossaries}
+	% For the letter of transmittal
+		\usepackage{pdfpages}
+	% Sub captions
+		\usepackage{subfig}
+		\usepackage{cleveref}
+	% convert .eps to .pdf
+		\usepackage{epstopdf}
+	% placeholder text
+		\usepackage{blindtext}
+% Math packages
+	\usepackage{amsmath}
+% Symbol packages
+	\usepackage{wasysym}
+	\usepackage{siunitx}
+
+\input{titlepage}
+
+\title{}
+\author{Tayler Mulligan \\ V00819591 \\ Work Term 2 \\ Electrical
+Engineering \\ mtayler@uvic.ca}
+\faculty{Faculty of Engineering}
+\semester{Winter 2017}
+\company{Embedded Solutions Team \\ Avigilon \\ Vancouver, BC}
+
+\graphicspath{{assets/}{../assets/}}
+
+% Glossary terms
+\input{glossary}
+
+\begin{document}
+
+\thispagestyle{empty}
+
+\begin{titlepage}
+\clearpage\maketitle
+\thispagestyle{empty}
+\end{titlepage}
+
+\pagenumbering{roman}
+
+\includepdf{letteroftransmittal}
+
+\clearpage
+
+\setcounter{page}{1}
+\tableofcontents
+\newpage
+
+\listoffigures
+\newpage
+
+\printglossary[type=\acronymtype,title=Abbreviations]
+\glossarystyle{altlist}
+
+\printglossary
+
+\newpage
+
+\onehalfspacing
+\input{sections/summary}
+\pagenumbering{arabic}
+\input{sections/introduction}
+\input{sections/discussion}
+\input{sections/conclusion}
+\input{sections/recommendations}
+\clearpage
+
+\bibliography{bibliography}
+\end{document}

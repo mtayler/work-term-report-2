@@ -1,0 +1,80 @@
+% Create a function to make a framed minipage
+\newsavebox{\fminipagebox}
+\NewDocumentEnvironment{fminipage}{m O{\fboxsep}}
+	{\par\kern#2\noindent\begin{lrbox}{\fminipagebox}
+		\begin{minipage}{#1}\ignorespaces}
+	{\end{minipage}\end{lrbox}%
+	\makebox[#1]{%
+		\kern\dimexpr-\fboxsep-\fboxrule
+		\fbox{\usebox{\fminipagebox}}%
+		\kern\dimexpr-\fboxsep-\fboxrule
+	}\kern#2
+}
+
+\makeatletter
+	\newcommand{\company}[1]{
+		\def\@company{#1}
+	}
+	\newcommand{\faculty}[1]{
+		\def\@faculty{#1}
+	}
+	\newcommand{\semester}[1]{
+		\def\@semester{#1}
+	}
+
+	\def\@maketitle{%
+		\newpage
+		\centering
+		{\large\bf University of Victoria \par}
+		\vspace{1em}
+		{\large\bf \@faculty \par}
+		{\large\bf \@semester~Work Term Report \par}
+		\vspace{1cm}
+		{\large\bf \@title \par}
+		\vspace{1cm}
+		{\large\bf \@company \par}
+		\vspace{0.8cm}
+		{\large\bf \@author \par}
+		\vspace{1.2cm}
+		{\large\bf \@date \par}
+		\vspace{0.6cm}
+		\vfill
+		\textbf{In partial fulfillment of the requirements \\ of the B.Eng. Degree}
+		\vspace{1.5em}
+		\begin{fminipage}{\textwidth}[1ex]
+			{\bf Supervisor's Approval: To be completed by Co-op Employer}
+			\small
+
+			\medbreak
+
+			\footnotesize{ I approve the release of this report to the
+			University of Victoria for evaluation purposes only.}
+
+			\bigbreak
+
+			The report is to be considered (\textbf{select one}) $\circ$
+			\footnotesize{NOT CONFIDENTIAL} $\circ$
+			\footnotesize{CONFIDENTIAL}
+
+			\bigbreak
+
+			Signature: {\underline{\hspace{3.2cm}} \hspace{0.5ex}}
+			Position: {\underline{\hspace{3cm}} \hspace{0.5ex}}
+			Date: {\underline{\hspace{1.6cm}}}
+
+			\bigbreak
+
+			Name: $\underset{\text{(print)}}{\underline{\hspace{3.2cm}}}$
+			\hspace{0.5ex}
+			E-Mail: {\underline{\hspace{3cm}} \hspace{0.5ex}}
+			Fax \#: {\underline{\hspace{2.1cm}}}
+
+			\medbreak
+
+			If a report is deemed CONFIDENTIAL, a non-disclosure form signed
+			by an evaluator will be faxed to the employer. The report will be
+			destroyed following evaluation. If the report is NOT CONFIDENTIAL,
+			it will be returned to the student following evaluation
+
+		\end{fminipage}}
+\makeatother
