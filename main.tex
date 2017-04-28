@@ -1,7 +1,5 @@
 \documentclass{article}
 
-\bibliographystyle{ieeetr}
-
 % Configuration
 
 % Project management
@@ -15,7 +13,7 @@
 	% captions
 		\usepackage[font=doublespacing]{caption}
 	% Include list of figures/tables in toc
-		\usepackage[nottoc]{tocbibind}
+		\usepackage[nottoc,nolof]{tocbibind}
 	% For glossary of terms and acronyms
 		\usepackage[xindy,toc,acronym]{glossaries}
 	% For the letter of transmittal
@@ -27,15 +25,24 @@
 		\usepackage{epstopdf}
 	% placeholder text
 		\usepackage{blindtext}
+	% source code listings
+		\usepackage{listings}
+% Bibliography
+	\usepackage[style=ieee]{biblatex}
 % Math packages
 	\usepackage{amsmath}
 % Symbol packages
 	\usepackage{wasysym}
 	\usepackage{siunitx}
 
+\lstset{
+	language=c++,
+	basicstyle=\ttfamily
+}
+
 \input{titlepage}
 
-\title{Implementation metrics on a real-time data processing framework}
+\title{Implementing metrics on a real-time data processing pipeline}
 \author{Tayler Mulligan \\ V00819591 \\ Work Term 2 \\ Electrical
 Engineering \\ mtayler@uvic.ca}
 \faculty{Faculty of Engineering}
@@ -43,6 +50,8 @@ Engineering \\ mtayler@uvic.ca}
 \company{Embedded Solutions Team \\ Avigilon \\ Vancouver, BC}
 
 \graphicspath{{assets/}{../assets/}}
+
+\addbibresource{bibliography.bib}
 
 % Glossary terms
 \input{glossary}
@@ -64,19 +73,20 @@ Engineering \\ mtayler@uvic.ca}
 
 \setcounter{page}{1}
 \tableofcontents
-\newpage
 
 \listoffigures
+
 \newpage
 
-\printglossary[type=\acronymtype,title=Abbreviations]
-\glossarystyle{altlist}
+\printglossary[type=acronym,title=Abbreviations]
+\setglossarystyle{altlist}
 
 \printglossary
 
 \newpage
 
 \onehalfspacing
+
 \input{sections/summary}
 \pagenumbering{arabic}
 \input{sections/introduction}
@@ -85,5 +95,5 @@ Engineering \\ mtayler@uvic.ca}
 \input{sections/recommendations}
 \clearpage
 
-\bibliography{bibliography}
+\printbibliography
 \end{document}

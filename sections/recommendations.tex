@@ -1,1 +1,15 @@
 \section{Recommendations}
+
+Through the successful implementation of a metrics framework for the new
+processing \gls{pipeline} functionality of the original fragmented
+\gls{pipeline} has been met or exceeded. The current recommendation is to adopt
+this new \gls{pipeline} for use, transitioning code that is fragmented for
+platform compatibility: ultimately reducing overall codebase
+fragmentation.
+
+It is also recommended this effort to reduce codebase fragmentation is continued
+and furthered past this and previous efforts, to unifying the rest of
+the codebase.  Simplicity in development is safety and having platform-specific
+execution paths and compilation is an opportunity for flaws and failures to
+arise. By reducing places execution paths and compilation differ depending on
+platform, faster, more stable, secure development can be achieved.

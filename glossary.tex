@@ -12,11 +12,121 @@
 
 % ========== Acronyms/Abbreviations ===========
 
+\newacronym{gcc}{GCC}{GNU Compiler Collection}
+
+\newacronym{msvc}{MSVC}{Microsoft C/C++}
+
 % =============================================
 
 \makeglossaries
 
 % ============== Glossary Terms ===============
+
+\newglossaryentry{class}{
+	name=class,
+	description={In object-oriented programming, an abstract representation of a concrete object, in a way
+		that can be understood by a computer},
+}
+
+\newglossaryentry{object}{
+	name=object,
+	description={An instance of a class},
+	see=[see also]{{instance},{class}},
+}
+
+\newglossaryentry{instance}{
+	name=instance,
+	description={In object-oriented programming, an instance is
+		a concrete occurrence of an abstract \gls{class}},
+	see=[see also]{class},
+}
+
+\newglossaryentry{transcode}{
+	name=transcode,
+	description={Convert from one form of encoding to another},
+}
+
+\newglossaryentry{pipeline}{
+	name=pipeline,
+	description={In software, a chain of elements to be processed, where
+		the output of one element is the input of the next},
+}
+
+\newglossaryentry{library}{
+	name=library,
+	description={In software, a collection of related
+		functions that can be utilized in other software},
+	plural=libraries,
+}
+
+\newglossaryentry{bigo}{
+	name=Big O,
+	description={A mathematical notation describing the limiting function
+		of an operation. Standard notation is $O(x)$, where x is the
+		limiting function},
+}
+
+\newglossaryentry{rolling}{
+	name=rolling,
+	description={In statistics, a rolling statistic is a statistic
+		calculated over a "window" of set size. As the window size is
+		reached old samples are discarded and ignored in favour of new
+		samples},
+}
+
+\newglossaryentry{tech-debt}{
+	name=technical debt,
+	description={In software, code that is developed because it was easy
+		to implement and the best solution at the time but is no longer the
+		best overall solution},
+}
+
+\newglossaryentry{work-unit}{
+	name=unit of work,
+	description={The smallest logical collection of work required to be
+		done in a larger process; generally atomic. All portions of the unit
+		must complete successfully, or fail completely without side-effects
+	\cite{martinfowler2003}},
+	plural=units of work,
+}
+
+\newglossaryentry{real-time}{
+	name=real-time,
+	description={A system which processes data in a time frame that is
+		virtually immediate},
+}
+
+\newglossaryentry{threadsafe}{
+	name=thread safe,
+	description={Code or an object that must interact with it's data
+		structures in such a way that can be executed from multiple
+		threads and preserve integrity},
+}
+
+\newglossaryentry{mutex}{
+	name=mutex,
+	description={An object used to enforce \gls{mutual-exclusion}},
+	see={mutual-exclusion},
+}
+
+\newglossaryentry{mutual-exclusion}{
+	name=mutual exclusion,
+	description={A control method used in concurrent programming to
+		prevent a race condition. It is the requirement that threads never
+		enter critical sections simultaneously},
+}
+
+\newglossaryentry{thread}{
+	name=thread,
+	description={The smallest sequence of instructions that can be managed
+		by a scheduler},
+}
+
+\newglossaryentry{stream}{
+	name=stream,
+	description={A sequence of data operated with no determinate end,
+		must be processed in sections rather than a whole},
+}
 
 % ============================================
 

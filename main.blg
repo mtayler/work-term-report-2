@@ -1,0 +1,17 @@
+[0] Config.pm:340> INFO - This is Biber 2.4
+[0] Config.pm:343> INFO - Logfile is 'main.blg'
+[46] biber:287> INFO - === Wed Apr 26, 2017, 13:28:47
+[129] Biber.pm:348> INFO - Reading 'main.bcf'
+[245] Biber.pm:742> INFO - Found 4 citekeys in bib section 0
+[249] Biber.pm:3151> INFO - Processing section 0
+[291] Biber.pm:3308> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[295] bibtex.pm:1113> INFO - Decoding LaTeX character macros into UTF-8
+[298] bibtex.pm:974> INFO - Found BibTeX data source 'bibliography.bib'
+[377] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[377] UCollate.pm:65> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[377] Biber.pm:3028> INFO - Sorting list 'none/global' of type 'entry' with scheme 'none' and locale 'en-US'
+[377] Biber.pm:3032> INFO - No sort tailoring available for locale 'en-US'
+[384] bbl.pm:519> INFO - Writing 'main.bbl' with encoding 'ascii'
+[393] Utils.pm:147> WARN - The entry 'matjazkljun' has characters which cannot be encoded in 'ascii'. Recoding problematic characters into macros.
+[404] bbl.pm:615> INFO - Output to main.bbl
+[404] Biber.pm:109> INFO - WARNINGS: 1

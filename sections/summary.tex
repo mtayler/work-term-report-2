@@ -1,1 +1,43 @@
 \section{Summary}
+
+\enlargethispage{2\normalbaselineskip}
+A fragmented codebase, caused by differing execution paths and compilation based
+on platform where this report is concerned, increases development time and cost,
+hurts maintainability, and increases the probability for failures and flaws in code to
+occur. Unification of the codebase by writing platform agnostic code decreases
+development time and cost, improves maintainability, and reduces the change of
+failures and flaws arising. A new \gls{real-time} processing \gls{pipeline} for
+\glspl{stream} requiring processing was created with emphasis on cross-platform
+support; this new \gls{pipeline} didn't implement metrics capability unlike the
+previous fragmented implementation.
+
+In an effort to provide improved debugging support and complete feature coverage
+a new metrics framework was designed, created, and integrated with the new
+processing \gls{pipeline}. This feature will increase usage of the new
+platform-agnostic platform and further the goal of a unified codebase.
+
+Through the design of this metrics framework many challenges were encountered
+providing opportunities to use engineering knowledge and experience to solve.
+Deciding on the best and most suitable data structures to use, the general
+architecture of the framework, how best to integrate the framework with the
+existing \gls{pipeline} code, and other issues such as \gls{threadsafe}ty were
+all challenges encountered in the development of the metrics framework.  The
+final design of the metrics framework was a metrics \gls{object} that stored
+samples and provided calculation of the metrics and printing functionality for
+"snapshots" of the metrics that were created to enforce consistency between a
+request for the calculation of the metrics and their printing; which was then
+integrated with the processing \gls{pipeline} through existing callback
+functionality. To add samples to the metrics object, the callbacks already
+present in the \glspl{work-unit} being processed were used to push the current
+time or a time duration referenced from the start of the event of interest,
+depending on the metric(s) the sample is used to compute.  To ensure the ability
+to process \glspl{work-unit} was minimally affected, any processing was limited
+to when the current value of the metrics are retrieved, as values are pushed on
+the execution \gls{thread} of the processing \gls{pipeline} and could be
+retrieved on a separate \gls{thread}.
+
+The metrics framework brought the new cross-platform \gls{pipeline} to
+feature parity with the old platform-specific \gls{pipeline}: furthering
+unification of the codebase and providing the benefits that come with
+unification of the codebase. It is recommended to keep pursuing this goal of a
+fully unified and cross-platform codebase.
